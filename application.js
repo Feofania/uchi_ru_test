@@ -18,6 +18,8 @@ $(document).ready(function() {
     if (alfa == randomFirst) {
       var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
       $('.quention').append(alfaLab);
+      //задать новую картинку
+      //задать новый inputBeta
     } else {
       $(this).toggleClass("notArrowAlfa");
       $(this).closest('.quention').find('.randomFirst').toggleClass("notRandomFirst");
@@ -25,13 +27,16 @@ $(document).ready(function() {
   });
   
   $('.arrowBeta'+randomSecond).on('keyup',  function() {
-    var alfa = $(this).val();
-    if (alfa == randomFirst) {
-      var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
-      $('.quention').append(alfaLab);
+    var beta = $(this).val();
+    if (beta == randomSecond) {
+      var betaLab = $("<label for='arrowBeta" + beta + "'>" + beta + "</label>");
+      $('.quention').append(betaLab);
+      //задать новый inputAnswer
     } else {
-      $(this).toggleClass("notArrowAlfa");
-      $(this).closest('.quention').find('.randomFirst').toggleClass("notRandomFirst");
+      $(this).toggleClass("notArrowBeta");
+      $(this).closest('.quention').find('.randomSecond').toggleClass("notRandomSecond");
     }
   });
+  
+  //слушать inputAnswer
 });
