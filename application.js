@@ -4,14 +4,34 @@ $(document).ready(function() {
   var max = 14 - randomFirst;
   var randomSecond = Math.round(Math.random() * ( max - min + 1)) + min;
   
-  var quention = $("<p class='quention'>" + randomFirst + " + " + randomSecond + " = ? </p>");
-  $('.quention').append(quention);
+  var expression = $("<p class='expression'> <span class='randomFirst'>" + randomFirst + "</span> + <span class='randomSecond'>" + randomSecond + "</span> = ? </p>");
+  $('.quention').append(expression);
   
   var sprite = $("<img class='sprite' src='sprites/sprite" + randomFirst + ".png'>");
-  $('.sprite').append(sprite);
+  $('.quention').append(sprite);
   
   var arrowAlfa = $("<input class='arrowAlfa" + randomFirst + "' input type='text' size='5'>");
-  $('.arrowAlfa').append(arrowAlfa);
+  $('.quention').append(arrowAlfa);
   
+  $('.arrowAlfa'+randomFirst).on('keyup',  function() {
+    var alfa = $(this).val();
+    if (alfa == randomFirst) {
+      var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
+      $('.quention').append(alfaLab);
+    } else {
+      $(this).toggleClass("notArrowAlfa");
+      $(this).closest('.quention').find('.randomFirst').toggleClass("notRandomFirst");
+    }
+  });
   
+  $('.arrowBeta'+randomSecond).on('keyup',  function() {
+    var alfa = $(this).val();
+    if (alfa == randomFirst) {
+      var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
+      $('.quention').append(alfaLab);
+    } else {
+      $(this).toggleClass("notArrowAlfa");
+      $(this).closest('.quention').find('.randomFirst').toggleClass("notRandomFirst");
+    }
+  });
 });
