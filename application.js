@@ -5,24 +5,24 @@ $(document).ready(function() {
   var randomSecond = Math.round(Math.random() * ( max - min + 1)) + min;
   
   var expression = $("<p class='expression'> <span class='randomFirst'>" + randomFirst + "</span> + <span class='randomSecond'>" + randomSecond + "</span> = ? </p>");
-  $('.quention').append(expression);
+  $('.question').append(expression);
   
   var sprite = $("<img class='sprite' src='sprites/sprite" + randomFirst + ".png'>");
-  $('.quention').append(sprite);
+  $('.question').append(sprite);
   
   var arrowAlfa = $("<input class='arrowAlfa" + randomFirst + "' input type='text' size='5'>");
-  $('.quention').append(arrowAlfa);
+  $('.question').append(arrowAlfa);
   
   $('.arrowAlfa'+randomFirst).on('keyup',  function() {
     var alfa = $(this).val();
     if (alfa == randomFirst) {
       var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
-      $('.quention').append(alfaLab);
+      $('.question').append(alfaLab);
       //задать новую картинку
       //задать новый inputBeta
     } else {
       $(this).toggleClass("notArrowAlfa");
-      $(this).closest('.quention').find('.randomFirst').toggleClass("notRandomFirst");
+      $(this).closest('.question').find('.randomFirst').toggleClass("notRandomFirst");
     }
   });
   
@@ -30,11 +30,11 @@ $(document).ready(function() {
     var beta = $(this).val();
     if (beta == randomSecond) {
       var betaLab = $("<label for='arrowBeta" + beta + "'>" + beta + "</label>");
-      $('.quention').append(betaLab);
+      $('.question').append(betaLab);
       //задать новый inputAnswer
     } else {
       $(this).toggleClass("notArrowBeta");
-      $(this).closest('.quention').find('.randomSecond').toggleClass("notRandomSecond");
+      $(this).closest('.question').find('.randomSecond').toggleClass("notRandomSecond");
     }
   });
   
