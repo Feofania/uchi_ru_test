@@ -37,10 +37,110 @@ p {
     left: 150px;
 }
 
-.notArrowAlfa {
+.notArrow {
     color: red;
 }
 
-.notRandomFirst {
+.notRandom {
     background-color: darkorange;
+}
+
+.arrowBeta65 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta66 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta67 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta68 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+
+.arrowBeta74 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta75 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta76 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta77 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+
+.arrowBeta83 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta84 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta85 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta86 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+
+.arrowBeta92 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta93 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta94 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
+}
+.arrowBeta95 {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    left: 350px;
 }
