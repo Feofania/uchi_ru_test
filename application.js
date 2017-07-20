@@ -1,18 +1,18 @@
 $(document).ready(function() {
-  var randomFirst = Math.round(Math.random() * 4) + 6;
+  var randomFirst = Math.round(Math.random() * 3) + 6;
   var min = 11 - randomFirst;
   var max = 14 - randomFirst;
   var randomSecond = Math.round(Math.random() * ( max - min + 1)) + min;
   
   var expression = $("<p class='expression'> <span class='randomFirst'>" + randomFirst + "</span> + <span class='randomSecond'>" + randomSecond + "</span> = ? </p>");
   $('.question').append(expression);
-  
-  var sprite = $("<img class='sprite' src='sprites/sprite" + randomFirst + ".png'>");
+
+  var sprite = $("<div class='sprite'><img src='sprites/sprite" + randomFirst + ".png'></div>");
   $('.question').append(sprite);
-  
-  var arrowAlfa = $("<input class='arrowAlfa" + randomFirst + "' input type='text' size='5'>");
+
+  var arrowAlfa = $("<div class='arrowAlfa" + randomFirst + "'><input input type='text' size='5'></div>");
   $('.question').append(arrowAlfa);
-  
+
   $('.arrowAlfa'+randomFirst).on('keyup',  function() {
     var alfa = $(this).val();
     if (alfa == randomFirst) {

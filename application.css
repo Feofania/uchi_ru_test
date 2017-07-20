@@ -1,27 +1,38 @@
 p {
-  
+
 }
 
 .question {
   
 }
 
-.answer {
-  
+.sprite {
+    position: relative;
+    z-index: 1;
 }
 
-.termA {
-  
+.arrowAlfa6 {
+    position: fixed;
+    z-index: 5;
+    top: 100px;
+    left: 150px;
 }
 
-.termB {
-  
+.arrowAlfa7 {
+    position: fixed;
+    z-index: 5;
+    top: 100px;
+    left: 150px;
 }
-
-.arrowA {
-  
+.arrowAlfa8 {
+    position: fixed;
+    z-index: 5;
+    top: 100px;
+    left: 150px;
 }
-
-.arrowA {
-  
+.arrowAlfa9 {
+    position: fixed;
+    z-index: 5;
+    top: 100px;
+    left: 150px;
 }
