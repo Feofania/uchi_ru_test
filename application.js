@@ -3,7 +3,7 @@ $(document).ready(function() {
   var min = 11 - randomFirst;
   var max = 14 - randomFirst;
   var randomSecond = Math.round(Math.random() * ( max - min)) + min;
-  
+
   var expression = $("<p class='expression'> <span class='randomFirst'>"+randomFirst+"</span> + <span class='randomSecond'>"+randomSecond+"</span> = ? </p>");
   $('.question').append(expression);
 
