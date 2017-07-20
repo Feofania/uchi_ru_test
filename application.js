@@ -7,16 +7,17 @@ $(document).ready(function() {
   var expression = $("<p class='expression'> <span class='randomFirst'>" + randomFirst + "</span> + <span class='randomSecond'>" + randomSecond + "</span> = ? </p>");
   $('.question').append(expression);
 
-  var sprite = $("<div class='sprite'><img src='sprites/sprite" + randomFirst + ".png'></div>");
+  var sprite = $("<img class='sprite' src='sprites/sprite" + randomFirst + ".png'>");
   $('.question').append(sprite);
 
-  var arrowAlfa = $("<div class='arrowAlfa" + randomFirst + "'><input input type='text' size='5'></div>");
+  var arrowAlfa = $("<input class='arrowAlfa" + randomFirst + "' type='text' size='1'>");
   $('.question').append(arrowAlfa);
 
   $('.arrowAlfa'+randomFirst).on('keyup',  function() {
     var alfa = $(this).val();
     if (alfa == randomFirst) {
-      var alfaLab = $("<label for='arrowAlfa" + alfa + "'>" + alfa + "</label>");
+      var alfaLab = $("<label for='arrowAlfa" + alfa + "' class='arrowAlfa" + randomFirst + "'>" + alfa + "</label>");
+      $('.arrowAlfa'+randomFirst).remove();
       $('.question').append(alfaLab);
       //задать новую картинку
       //задать новый inputBeta

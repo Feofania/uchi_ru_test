@@ -36,3 +36,11 @@ p {
     top: 100px;
     left: 150px;
 }
+
+.notArrowAlfa {
+    color: red;
+}
+
+.notRandomFirst {
+    background-color: darkorange;
+}
