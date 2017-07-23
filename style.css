@@ -1,0 +1,47 @@
+.expression {
+    position: absolute;
+    left: 300px;
+    font-size: 30px;
+}
+
+.answer {
+    position: absolute;
+    z-index: 5;
+    top: 25px;
+    left: 440px;
+    font-size: 30px;
+}
+
+.sprite {
+    position: absolute;
+    z-index: 1;
+    top: 200px;
+}
+
+#arrowAlfa {
+    position: absolute;
+    z-index: 10;
+}
+
+#arrowBeta {
+    position: absolute;
+    z-index: 10;
+}
+
+.alfaInput {
+    position: absolute;
+    z-index: 20;
+}
+
+.betaInput {
+    position: absolute;
+    z-index: 20;
+}
+
+.notArrow {
+    color: red;
+}
+
+.notRandom {
+    background-color: darkorange;
+}
