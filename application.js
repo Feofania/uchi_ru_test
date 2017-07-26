@@ -4,13 +4,14 @@ $(document).ready(function() {
     var max = 14 - randomFirst;
     var randomSecond = Math.round(Math.random() * ( max - min)) + min;
 
-    //пример
-    var expression = $("<div class='expression'><p> <span class='randomFirst'>"+randomFirst+"</span> + <span class='randomSecond'>"+randomSecond+"</span> = ? </p></div>");
-    $('.question').append(expression);
+    ///пример
+    ///var expression = $("<div class='expression'><p> <span class='randomFirst'>"+randomFirst+"</span> + <span class='randomSecond'>"+randomSecond+"</span> = ? </p></div>");
+    ///$('.question').append(expression);
+    $('.expression').find('p').text(randomFirst+' + '+randomSecond+' = ?');
 
-    //ось
-    var sprite = $("<div class='sprite'><img src='test_task/sprite.png'></div>");
-    $('.question').append(sprite);
+    ///ось
+    ///var sprite = $("<div class='sprite'><img src='test_task/sprite.png'></div>");
+    ///$('.question').append(sprite);
 
     //канвас для первой стрелки
     var heightAlfa = Math.round((40*randomFirst-randomFirst-1)/3);
@@ -40,10 +41,18 @@ $(document).ready(function() {
     $('.question').find('.arrows').append(alfaInput);
     $('.arrows').find('.alfaInput').offset({top:topAlfa-10, left:widthAlfa/2});
 
-    $('.alfaInput').on('keyup',  function() {
-        var alfa = $(this).val();
 
-        if (alfa == randomFirst) {
+
+
+
+
+
+    $('.arrows').on('keyup', 'alfaInput', function(e) {
+        if (e.originalEvent.defaultPrevented) return;
+        this.isDefaultPrevented=e.defaultPrevented||e.returnValue===!1||e.getPreventDefault&&e.getPreventDefault()
+        var alfa = +$(this).val();
+
+        if (alfa === randomFirst) {
             //если значение инпут верно, удаляем инпут, добавляем лейбел
             var alfaLab = $("<label class='alfaInput'>"+alfa+"</label>");
             $('.arrows').find('.alfaInput').remove();
@@ -70,40 +79,44 @@ $(document).ready(function() {
             $(this).toggleClass("notArrow");
             $(this).closest('.question').find('.randomFirst').toggleClass("notRandom");
         }
-
-        $('.betaInput').on('keyup', function() {
-            var beta = $(this).val();
-
-            if (beta == randomSecond) {
-                //если значение инпут верно, удаляем инпут, добавляем лейбел
-                var betaLab = $("<label class='betaInput'>"+beta+"</label>");
-                $('.arrows').find('.betaInput').remove();
-                $('.question').find('.arrows').append(betaLab);
-                $('.arrows').find('.betaInput').offset({top:topBeta, left:leftBeta+widthBeta/2});
-
-                //поле ввода суммы
-                var answer = $("<input class='answer' type='text' size='1'>");
-                $('.question').find('.expression').append(answer);
-                $('.expression').find('p').text(randomFirst+' + '+randomSecond+' = ');
-            } else {
-                $(this).toggleClass("notArrow");
-                $(this).closest('.question').find('.randomSecond').toggleClass("notRandom");
-            }
-
-            $('.answer').on('keyup', function(){
-                var an = $(this).val();
-                if (an == randomFirst+randomSecond) {
-                    $('.expression').find('.answer').remove();
-                    $('.expression').find('p').text(randomFirst+' + '+randomSecond+' = '+an);
-                } else {
-                    $(this).toggleClass("notArrow");
-                }
-            });
-        });
     });
 
-/*
+    $('.arrows').on('keyup', '.betaInput', function(e) {
+        if (e.originalEvent.defaultPrevented) return;
+        this.isDefaultPrevented=e.defaultPrevented||e.returnValue===!1||e.getPreventDefault&&e.getPreventDefault()
+        var beta = +$(this).val();
 
+        if (beta === randomSecond) {
+            //если значение инпут верно, удаляем инпут, добавляем лейбел
+            var betaLab = $("<label class='betaInput'>"+beta+"</label>");
+             $('.arrows').find('.betaInput').remove();
+             $('.question').find('.arrows').append(betaLab);
+             $('.arrows').find('.betaInput').offset({top:topBeta, left:leftBeta+widthBeta/2});
+
+             //поле ввода суммы
+             var answer = $("<input class='answer' type='text' size='2'>");
+             $('.question').find('.expression').append(answer);
+             $('.expression').find('p').text(randomFirst+' + '+randomSecond+' = ');
+        } else {
+            $(this).toggleClass("notArrow");
+            $(this).closest('.question').find('.randomSecond').toggleClass("notRandom");
+        }
+    });
+
+    $('.expression').on('keyup', '.answer', function(e){
+        if (e.originalEvent.defaultPrevented) return;
+        this.isDefaultPrevented=e.defaultPrevented||e.returnValue===!1||e.getPreventDefault&&e.getPreventDefault()
+        var an = +$(this).val();
+        if (an === randomFirst+randomSecond) {
+            $('.expression').find('.answer').remove();
+            $('.expression').find('p').text(randomFirst+' + '+randomSecond+' = '+an);
+        } else {
+            $(this).toggleClass("notArrow");
+        }
+    });
+
+
+/*
 
 
 
